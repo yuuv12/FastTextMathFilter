@@ -55,6 +55,7 @@ ValueError: Unable to avoid copy while creating an array as requested.
 If using np.array(obj, copy=False) replace it with np.asarray(obj) to allow a copy when needed (no behavior change in NumPy 1.x).
 For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
 ```
+
 请将`your_anaconda3_dir/envs/fasttextmath/lib/python3.10/site-packages/fasttext/FastText.py`
 第239行中`_FastText`类的`predict`方法的返回值，由
 
@@ -78,7 +79,8 @@ return labels, np.asarray(probs)
 
 - **数学文本数据集**：`open-web-math/open-web-math`
 - **非数学文本数据集**：`HuggingFaceFW/fineweb`
-- 
+
+
 ---
 
 ### 1. 数据获取与采样
@@ -95,6 +97,7 @@ return labels, np.asarray(probs)
 - 生成两个符合 `FastText` 标准输入格式的文本文件，形如：
 
 ### 数据格式
+
 ```
 __label__math 数学相关文本
 __label__other 非数学文本
@@ -180,6 +183,7 @@ nohup python src/train.py >> log/training.log 2>&1 &
 python plot_training.py
 python evaluate.py
 ```
+
 ---
 
 ## 打标后的示例fineweb数据
